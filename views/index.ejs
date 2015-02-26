@@ -9,7 +9,7 @@
 
         $(function () { // Dom Ready
 
-            var myPath = [0];
+            var myPath = [];
 
             $('button.choice').on('click', function (event) {
 
@@ -19,7 +19,21 @@
 
                 $('#step' + choiceId).show();
 
-                myPath.push(choiceId);
+                myPath.push($(this).parents('.question').attr('id').replace('step', ''));
+
+            });
+
+            $('button.back').on('click', function (event) {
+
+                $(this).parents('.question').hide();
+
+                var backId = myPath[myPath.length - 1];
+
+                console.log(backId);
+
+                $('#step' + backId).show();
+
+                myPath.length = myPath.length - 1;
 
             });
 
