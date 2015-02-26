@@ -13,11 +13,11 @@
 
             $('button.choice').on('click', function (event) {
 
-                $(this).parents('.question').hide();
+                $(this).parents('.question').addClass('question--hidden');
 
                 var choiceId = $(this).data('step')
 
-                $('#step' + choiceId).show();
+                $('#step' + choiceId).removeClass('question--hidden');
 
                 myPath.push($(this).parents('.question').attr('id').replace('step', ''));
 
@@ -25,13 +25,13 @@
 
             $('button.back').on('click', function (event) {
 
-                $(this).parents('.question').hide();
+                $(this).parents('.question').addClass('question--hidden');
 
                 var backId = myPath[myPath.length - 1];
 
                 console.log(backId);
 
-                $('#step' + backId).show();
+                $('#step' + backId).removeClass('question--hidden');
 
                 myPath.length = myPath.length - 1;
 
