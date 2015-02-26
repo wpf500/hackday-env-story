@@ -7,8 +7,22 @@
 
     <script>
 
-        $.get('/quiz', function (data) {
-            console.log(data);
+        $(function () { // Dom Ready
+
+            var myPath = [0];
+
+            $('button.choice').on('click', function (event) {
+
+                $(this).parents('.question').hide();
+
+                var choiceId = $(this).data('step')
+
+                $('#step' + choiceId).show();
+
+                myPath.push(choiceId);
+
+            });
+
         });
 
     </script>
@@ -16,7 +30,48 @@
   </head>
   <body>
 
+    <div id="step1" class="question">
 
+        <p>Do you like interactive journeys?</p>
+
+        <div class="related">some related info</div>
+
+        <div class="choices">
+            <button class="choice" data-step="2">yes</button>
+            <button class="choice" data-step="3">no</button>
+        </div>
+
+    </div>
+
+    <div id="step2" class="question question--hidden">
+
+        <button class="back">< back</button>
+
+        <p>Do you like second steps?</p>
+
+        <div class="related">some related info</div>
+
+        <div class="choices choices--hidden">
+            <button class="choice">yes</button>
+            <button class="choice">no</button>
+        </div>
+
+    </div>
+
+    <div id="step3" class="question question--hidden">
+
+        <button class="back">< back</button>
+
+        <p>Do you like third steps?</p>
+
+        <div class="related">some related info</div>
+
+        <div class="choices choices--hidden">
+            <button class="choice">yes</button>
+            <button class="choice">no</button>
+        </div>
+
+    </div>
 
   </body>
 </html>
