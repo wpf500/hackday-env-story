@@ -3,8 +3,20 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script>
+
+        $.get('/quiz', function (data) {
+            console.log(data);
+        });
+
+    </script>
+
   </head>
   <body>
-    <h1>hackday env interactive</h1>
+
+
+
   </body>
 </html>
