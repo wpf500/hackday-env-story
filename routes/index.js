@@ -18,19 +18,19 @@ router.get('/quiz', function(req, res, next) {
             text: 'Second Choice'
         }]
         headline: 'My First step',
-        template: '/my/template/path', // Resolve to template
+        copy: '/my/template/path', // Resolve to template
         related: {} // ?
     },{
         id: 1,
         choices: []
         headline: 'My second step',
-        template: '/my/template/path', // Resolve to template
+        copy: '/my/template/path', // Resolve to template
         related: {} // ?
     },{
         id: 2,
         choices: []
         headline: 'My third step',
-        template: '/my/template/path', // Resolve to template
+        copy: '/my/template/path', // Resolve to template
         related: {} // ?
     }]);
 });
